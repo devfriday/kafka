@@ -44,6 +44,48 @@ public class WriteToOutputTopic {
 		consumer.close();
 	}
 
+/*
+	run zookeeper:
+	zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+	run server:
+	kafka-server-start.bat ..\..\config\server.properties
+
+	create topic INPOUT:
+	kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic inputtopic
+
+	create topic OUTPUT:
+	kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic outputtopic
+
+	delete topic:
+	kafka-topics.bat --zookeeper localhost:2181 --delete --topic demo
+
+	info:
+	kafka-topics.bat --describe --topic demo --zookeeper localhost:2181
+
+	list topic:
+	run zookeeper:
+	zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+	run server:
+	kafka-server-start.bat ..\..\config\server.properties
+
+	create topic:
+	kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic demo
+
+	delete topic:
+	kafka-topics.bat --zookeeper localhost:2181 --delete --topic demo
+
+	info:
+	kafka-topics.bat --describe --topic demo --zookeeper localhost:2181
+
+	consume topic:
+	kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic inputtopic --from -beginning
+
+	produce topic :
+	kafka-console-producer.bat --broker-list localhost:9092 --topic inputtopic
+*/
+
 
 
 }
